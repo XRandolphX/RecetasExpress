@@ -34,12 +34,9 @@ export default function HomeScreen() {
     const timeout = setTimeout(() => {
       fetchMeals(search);
     }, 500);
+
     return () => clearTimeout(timeout);
   }, [search]);
-
-  const handleSearch = () => {
-    fetchMeals(search);
-  };
 
   const renderItem: ListRenderItem<Meal> = ({ item }) => {
     return (
