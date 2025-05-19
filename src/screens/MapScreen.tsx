@@ -1,9 +1,29 @@
-import { View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
+import MapView, { Marker } from "react-native-maps";
 
 export default function MapScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text> Mapa de Origen de la Receta </Text>
+    <View style={styles.container}>
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 41.9028,
+          longitude: 12.4964,
+          latitudeDelta: 10,
+          longitudeDelta: 10,
+        }}
+      >
+        <Marker
+          coordinate={{ latitude: 41.9028, longitude: 12.4964 }}
+          title="Origen de la receta"
+          description="Ubicación simulada"
+        />
+      </MapView>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  map: { flex: 1 },
+});
