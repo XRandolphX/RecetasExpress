@@ -24,7 +24,7 @@ Desarrollada en **React Native (Expo)** utilizando **TypeScript**, con navegaci�
 - 🌍 **Mapa interactivo** simulando la ubicación geográfica de la receta según su origen.
 - ❤️ **Gestión de favoritos** con almacenamiento local usando AsyncStorage.
 - 🔗 **Compartir recetas** por mensajería o redes sociales.
-- 🔐 **Autenticación simulada** para demostrar flujos protegidos.
+- 🔐 **Autenticación simulada** usando **Context API** y **AsyncStorage** para gestionar el estado de sesión.
 - 📲 **Generación de APK firmado y listo para distribuir**.
 
 ---
@@ -34,7 +34,7 @@ Desarrollada en **React Native (Expo)** utilizando **TypeScript**, con navegaci�
 ### 🗂️ Estructura Modular
 
 - **/constants**: Paleta de colores y configuraciones globales.
-- **/context**: Gestión de sesión de usuario con Context API.
+- **/context**: Gestión de sesión de usuario usando **Context API** y **AsyncStorage** para mantener el estado de autenticación en toda la aplicación.
 - **/screens**: Pantallas principales.
 - **/services**: Lógica de consumo de API y persistencia local.
 - **/types**: Tipado global con TypeScript.
@@ -53,6 +53,7 @@ Desarrollada en **React Native (Expo)** utilizando **TypeScript**, con navegaci�
 - **Google Maps / react-native-maps**: Representación visual del origen geográfico.
 - **Expo Image Assets**: Gestión de íconos y splash screen personalizados.
 - **Share API**: Compartir recetas desde el sistema operativo.
+- **Context API + AsyncStorage:** Simulación de sesión persistente con almacenamiento local.
 
 ---
 
