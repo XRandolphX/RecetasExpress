@@ -12,7 +12,7 @@ export type RootStackParamList = {
   Home: undefined;
   Search: undefined;
   Detail: { meal: Meal };
-  Map: undefined;
+  Map: { area?: string };
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();

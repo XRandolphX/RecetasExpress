@@ -58,7 +58,7 @@ export default function DetailScreen() {
       <View style={styles.buttonSpacing}>
         <Button
           title="Ver en Mapa"
-          onPress={() => navigation.navigate("Map")}
+          onPress={() => navigation.navigate("Map", { area: meal.strArea })}
         />
       </View>
 
