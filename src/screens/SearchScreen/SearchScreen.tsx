@@ -56,6 +56,7 @@ export default function SearchScreen() {
     <SafeAreaView style={styles.container}>
       <TextInput
         placeholder="Buscar receta..."
+        placeholderTextColor="black"
         value={search}
         onChangeText={setSearch}
         style={styles.input}
