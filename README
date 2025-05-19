@@ -7,13 +7,13 @@ Desarrollada en **React Native (Expo)** utilizando **TypeScript**, con navegaci�
 
 ## 📸 Capturas de Pantalla
 
-| Pantalla de Login            | Bienvenida                  | Buscador de Recetas           | Resultado de Búsqueda        |
-| ---------------------------- | --------------------------- | ----------------------------- | ---------------------------- |
-| ![](./screenshots/login.jpg) | ![](./screenshots/home.jpg) | ![](./screenshots/search.jpg) | ![](./screenshots/query.jpg) |
+| Pantalla de Login                 | Bienvenida                      | Buscador de Recetas                 | Resultado de Búsqueda             |
+| --------------------------------- | ------------------------------- | ----------------------------------- | --------------------------------- |
+| ![Login](./screenshots/login.jpg) | ![Home](./screenshots/home.jpg) | ![Search](./screenshots/search.jpg) | ![Query](./screenshots/query.jpg) |
 
-| Detalle de Receta             | Mapa Interactivo           | Recetas Favoritas                | Compartir Receta             |
-| ----------------------------- | -------------------------- | -------------------------------- | ---------------------------- |
-| ![](./screenshots/detail.jpg) | ![](./screenshots/map.jpg) | ![](./screenshots/favorites.jpg) | ![](./screenshots/share.jpg) |
+| Detalle de Receta                   | Mapa (solo Expo)              | Recetas Favoritas                         | Compartir Receta                  |
+| ----------------------------------- | ----------------------------- | ----------------------------------------- | --------------------------------- |
+| ![Detail](./screenshots/detail.jpg) | ![Map](./screenshots/map.jpg) | ![Favorites](./screenshots/favorites.jpg) | ![Share](./screenshots/share.jpg) |
 
 ---
 
