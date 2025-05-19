@@ -13,10 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../App";
 
-type Meal = {
-  idMeal: string;
-  strMeal: string;
-};
+import { Meal } from "../types/Meal";
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
@@ -42,7 +39,7 @@ export default function HomeScreen() {
     return (
       <TouchableOpacity
         style={styles.item}
-        onPress={() => navigation.navigate("Detail")}
+        onPress={() => navigation.navigate("Detail", { meal: item })}
       >
         <Text>{item.strMeal}</Text>
       </TouchableOpacity>

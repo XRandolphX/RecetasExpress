@@ -5,9 +5,11 @@ import HomeScreen from "./src/screens/HomeScreen";
 import DetailScreen from "./src/screens/DetailScreen";
 import MapScreen from "./src/screens/MapScreen";
 
+import { Meal } from "./src/types/Meal";
+
 export type RootStackParamList = {
   Home: undefined;
-  Detail: undefined;
+  Detail: { meal: Meal };
   Map: undefined;
 };
 
