@@ -6,10 +6,12 @@ import {
   Share,
   Linking,
   ScrollView,
+  Alert,
 } from "react-native";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../App";
+import { addFavorite } from "../../services/favorites";
 import { styles } from "./styles";
 
 type DetailRouteProp = RouteProp<RootStackParamList, "Detail">;
@@ -36,6 +38,14 @@ export default function DetailScreen() {
     }
   };
 
+  const handleAddFavorite = async () => {
+    await addFavorite(meal);
+    Alert.alert(
+      "Favorito agregado",
+      `${meal.strMeal} fue guardado en favoritos.`
+    );
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
@@ -60,6 +70,10 @@ export default function DetailScreen() {
           title="Ver en Mapa"
           onPress={() => navigation.navigate("Map", { area: meal.strArea })}
         />
+      </View>
+
+      <View style={styles.buttonSpacing}>
+        <Button title="Guardar como favorito" onPress={handleAddFavorite} />
       </View>
 
       <View style={styles.buttonSpacing}>

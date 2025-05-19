@@ -21,7 +21,18 @@ export default function HomeScreen() {
         <Text style={styles.subtitle}>
           Descubre y guarda tus recetas favoritas
         </Text>
-        <Button title="Empezar" onPress={() => navigation.navigate("Search")} />
+        <View style={{ marginBottom: 16, width: "80%" }}>
+          <Button
+            title="Empezar"
+            onPress={() => navigation.navigate("Search")}
+          />
+        </View>
+        <View style={{ width: "80%" }}>
+          <Button
+            title="Ver favoritos"
+            onPress={() => navigation.navigate("Favorites")}
+          />
+        </View>
       </View>
     </ImageBackground>
   );
