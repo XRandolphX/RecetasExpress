@@ -39,11 +39,15 @@ export default function SearchScreen() {
   const renderItem: ListRenderItem<Meal> = ({ item }) => {
     return (
       <TouchableOpacity
-        style={styles.card}
+        style={styles.item}
         onPress={() => navigation.navigate("Detail", { meal: item })}
       >
-        <Image source={{ uri: item.strMealThumb }} style={styles.cardImage} />
-        <Text style={styles.cardTitle}>{item.strMeal}</Text>
+        <Image
+          source={{ uri: item.strMealThumb }}
+          style={styles.image}
+          resizeMode="cover"
+        />
+        <Text style={{ textAlign: "center" }}>{item.strMeal}</Text>
       </TouchableOpacity>
     );
   };

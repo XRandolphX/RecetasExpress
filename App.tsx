@@ -25,7 +25,7 @@ function AppNavigator() {
   const { isLoggedIn } = useAuth();
 
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator>
       {!isLoggedIn ? (
         <Stack.Screen name="Login" component={LoginScreen} />
       ) : (
