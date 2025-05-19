@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, Image, Platform } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { RootStackParamList } from "../../../App";
@@ -21,22 +21,40 @@ export default function MapScreen() {
   const area = route.params?.area || "Italian";
   const coordinates = areaCoordinates[area] || areaCoordinates["Italian"];
 
+  // Si no estamos en desarrollo
+  const isProduction = Platform.OS !== "web" && !__DEV__;
+
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        initialRegion={{
-          ...coordinates,
-          latitudeDelta: 10,
-          longitudeDelta: 10,
-        }}
-      >
-        <Marker
-          coordinate={coordinates}
-          title={`Origen: ${area}`}
-          description="Ubicación simulada"
-        />
-      </MapView>
+      {isProduction ? (
+        <View>
+          <Image
+            source={require("../../../assets/map-fallback.jpg")}
+            style={styles.fallbackImage}
+            resizeMode="contain"
+          />
+          <Text style={styles.fallbackText}>
+            No se pudo cargar el mapa en esta versión. Revisa la configuración
+            de Google Maps.
+          </Text>
+        </View>
+      ) : (
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            ...coordinates,
+            latitudeDelta: 10,
+            longitudeDelta: 10,
+          }}
+        >
+          <Marker
+            coordinate={coordinates}
+            title={`Origen: ${area}`}
+            description="Ubicación simulada"
+          />
+        </MapView>
+      )}
+      ;
     </View>
   );
 }
