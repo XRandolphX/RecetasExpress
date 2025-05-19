@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Button, Image } from "react-native";
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { RootStackParamList } from "../../App";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -12,6 +12,10 @@ export default function DetailScreen() {
   const { meal } = route.params;
   return (
     <View style={styles.container}>
+      <Image
+        source={{ uri: meal.strMealThumb }}
+        style={{ width: 200, height: 200, borderRadius: 12, marginBottom: 20 }}
+      />
       <Text style={styles.title}>{meal.strMeal}</Text>
       <Text>ID: {meal.idMeal}</Text>
       <Button title="Ver en Mapa" onPress={() => navigation.navigate("Map")} />

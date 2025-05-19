@@ -7,6 +7,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ListRenderItem,
+  Image,
 } from "react-native";
 import { getMeals } from "../services/api";
 import { useNavigation } from "@react-navigation/native";
@@ -41,7 +42,17 @@ export default function HomeScreen() {
         style={styles.item}
         onPress={() => navigation.navigate("Detail", { meal: item })}
       >
-        <Text>{item.strMeal}</Text>
+        <Image
+          source={{ uri: item.strMealThumb }}
+          style={{
+            width: "100%",
+            height: 200,
+            borderRadius: 8,
+            marginBottom: 8,
+          }}
+          resizeMode="cover"
+        />
+        <Text style={{ textAlign: "center" }}>{item.strMeal}</Text>
       </TouchableOpacity>
     );
   };
