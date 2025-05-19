@@ -4,11 +4,13 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../../App";
 import { styles } from "./styles";
+import { useAuth } from "../../context/AuthContext";
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, "Home">;
 
 export default function HomeScreen() {
   const navigation = useNavigation<NavigationProp>();
+  const { logout } = useAuth();
 
   return (
     <ImageBackground
@@ -27,11 +29,14 @@ export default function HomeScreen() {
             onPress={() => navigation.navigate("Search")}
           />
         </View>
-        <View style={{ width: "80%" }}>
+        <View style={styles.favorites}>
           <Button
             title="Ver favoritos"
             onPress={() => navigation.navigate("Favorites")}
           />
+        </View>
+        <View style={styles.logout}>
+          <Button title="Cerrar Sesión" onPress={logout} />
         </View>
       </View>
     </ImageBackground>

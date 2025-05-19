@@ -25,4 +25,10 @@ export const styles = StyleSheet.create({
     marginBottom: 16,
     textAlign: "center",
   },
+  favorites: {
+    width: "80%",
+  },
+  logout: {
+    marginTop: 20,
+  },
 });
