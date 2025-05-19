@@ -97,6 +97,7 @@ export default function FavoritesScreen() {
         </Text>
       ) : (
         <FlatList
+          contentContainerStyle={{ paddingBottom: 16 }}
           data={favorites}
           keyExtractor={(item) => item.idMeal}
           renderItem={renderItem}

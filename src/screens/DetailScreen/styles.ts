@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  container: { alignItems: "center", padding: 16 },
+  container: { alignItems: "center", padding: 16, paddingBottom: 32 },
   image: { width: 300, height: 200, borderRadius: 12, marginBottom: 20 },
   title: {
     fontSize: 24,

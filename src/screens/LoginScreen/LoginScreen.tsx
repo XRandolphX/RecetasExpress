@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { View, Text, TextInput, Button, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  Alert,
+  ImageBackground,
+} from "react-native";
 import { useAuth } from "../../context/AuthContext";
 import { styles } from "./styles";
 
@@ -22,24 +29,28 @@ export default function LoginScreen() {
     }
   };
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Iniciar Sesión</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Correo electrónico"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-        autoCapitalize="none"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Contraseña"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <Button title="Iniciar Sesión" onPress={handleLogin} />
-    </View>
+    <ImageBackground
+      source={require("../../../assets/home.png")}
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.overlay}>
+        <Text style={styles.title}>Inicia Sesión</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Correo electrónico"
+          value={email}
+          onChangeText={setEmail}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Contraseña"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+        <Button title="Ingresar" onPress={handleLogin} />
+      </View>
+    </ImageBackground>
   );
 }

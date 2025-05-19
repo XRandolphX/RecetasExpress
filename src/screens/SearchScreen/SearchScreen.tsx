@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ListRenderItem,
   Image,
+  SafeAreaView,
 } from "react-native";
 import { getMeals } from "../../services/api";
 import { useNavigation } from "@react-navigation/native";
@@ -38,26 +39,17 @@ export default function SearchScreen() {
   const renderItem: ListRenderItem<Meal> = ({ item }) => {
     return (
       <TouchableOpacity
-        style={styles.item}
+        style={styles.card}
         onPress={() => navigation.navigate("Detail", { meal: item })}
       >
-        <Image
-          source={{ uri: item.strMealThumb }}
-          style={{
-            width: "100%",
-            height: 200,
-            borderRadius: 8,
-            marginBottom: 8,
-          }}
-          resizeMode="cover"
-        />
-        <Text style={{ textAlign: "center" }}>{item.strMeal}</Text>
+        <Image source={{ uri: item.strMealThumb }} style={styles.cardImage} />
+        <Text style={styles.cardTitle}>{item.strMeal}</Text>
       </TouchableOpacity>
     );
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TextInput
         placeholder="Buscar receta..."
         value={search}
@@ -68,7 +60,9 @@ export default function SearchScreen() {
         data={meals}
         keyExtractor={(item) => item.idMeal}
         renderItem={renderItem}
+        contentContainerStyle={{ paddingBottom: 32 }}
+        showsVerticalScrollIndicator={false}
       />
-    </View>
+    </SafeAreaView>
   );
 }
